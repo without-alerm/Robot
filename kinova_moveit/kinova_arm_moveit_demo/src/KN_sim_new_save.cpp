@@ -144,9 +144,7 @@ int main(int argc, char **argv)
   ros::Publisher display_publisher = node_handle.advertise<moveit_msgs::DisplayTrajectory>("/move_group/display_planned_path", 1, true);
 	ros::Publisher detectTarget_pub = node_handle.advertise<std_msgs::Int8>("detect_target", 10);  //让visual_detect节点检测目标
 	ros::Publisher grab_result_pub = node_handle.advertise<rviz_teleop_commander::grab_result>("grab_result", 1);  //发布抓取状态
-  //receive the objects position var visual nodes
 	ros::Subscriber detectResult_sub = node_handle.subscribe("detect_result", 1, detectResultCB);    //接收visual_detect检测结果
-  //receive the objects to be pisked var rviz
   ros::Subscriber tags_sub = node_handle.subscribe("targets_tag", 1, tagsCB);				//接收目标序列
   ros::Subscriber joints_sub = node_handle.subscribe("/j2s7s300/joint_states", 1, getRobotInfo);				//接收目标序列
 
@@ -570,6 +568,18 @@ void goStartPose()
   finger_group->setNamedTarget("Close");   //仿真使用
   finger_group->move();
 }
+
+//void setStartPose1()
+//{
+//  startPose1.clear();
+//  startPose1.push_back(-2.33038);
+//  startPose1.push_back(2.42892);
+//  startPose1.push_back(3.49546);
+//  startPose1.push_back(1.81877);
+//  startPose1.push_back(2.89536);
+//  startPose1.push_back(1.97723);
+//  startPose1.push_back(-14.52231);
+//}
 
 void setStartPose1()
 {

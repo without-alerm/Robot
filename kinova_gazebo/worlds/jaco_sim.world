@@ -16,6 +16,10 @@
       <pose>0 0 0 1.5707963 0 0</pose>
     </include>
 -->
+    <include>
+      <uri>model://cube</uri>
+      <pose>-0.15 0.3 2 0 0 0</pose>
+    </include>
 
     <!-- Focus camera on tall pendulum -->
     <gui fullscreen='0'>
